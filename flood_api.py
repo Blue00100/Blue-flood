@@ -4,7 +4,9 @@ from flask_cors import CORS
 from datetime import datetime
 
 app = Flask(__name__)
-CORS(app, resources={r"/api/*": {"origins": "*"}})
+
+# Allow CORS for all origins and all ports
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 # Fake disaster data
 fake_weather_data = {
